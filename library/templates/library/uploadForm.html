@@ -1,0 +1,25 @@
+<!-- use library.html as base templates every thing inside block content will replace -->
+{% extends 'library/library.html' %}
+{% block content %}
+    <div class="container-fluid">
+        <h1 class="text-center mb-3 font-weight-bolder">Upload A Book</h1>
+
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <form method = 'POST' enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <table class = "table table-light bg-warning" style="border-radius:10px;">
+                        <!-- use for loop to render each form field -->
+                        {% for field in uploadForm %}
+                        <tr>
+                            <th>{{field.label}}</th>
+                            <td>{{ field }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <button type="submit" class="btn btn-lg btn-success float-right mb-5">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Django Library App</title>
+    <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous"
+    >
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark d-flex justify-content-between">
+    <h1 class="text-white font-weight-bolder">Django Library App</h1>
+    <div>
+        <!-- link to function in views.py coresponding to the name in urls.py -->
+        <a href="{% url 'uploadBook' %}" class="navbar-link btn-lg btn-primary">Upload Books</a>
+        <a href="{% url 'index' %}" class="navbar-link btn-lg btn-info">Home</a>
+    </div>
+</nav>
+<br>
+
+{% block content %}
+<div class="d-flex justify-content-around flex-wrap">
+    <!-- use for loop to render each data row in database -->
+    {% for book in bookShelf %}
+    <div class="card mb-4 shadow-sm" style="width: 20rem;">
+        <img class="card-img-top d-flex align-items-center justify-content-center" style="height: 400px" src="{{ book.picture.url }}">
+
+        <div class="card-body text-center bg-light border-top border-dark">
+            <h5 class="card-title font-weight-bolder d-flex justify-content-center align-items-center" style="height: 70px;">{{ book.title }}</h5>
+
+            <p class="card-text d-flex justify-content-center align-items-center" style="height: 60px;">{{ book.describe }}</p>
+
+            <div class="card-footer bg-transparent border-dark">
+                <p class="card-title" style="height: 40px;">{{book.author}}</p>
+
+                <div class="text-center">
+                    <!-- link to update/delete function in views.py will coresponding to the path in urls.py -->
+                    <a href="update/{{book.id}}" class="btn btn-warning" id = '{{book.id}}'>Edit</a>
+
+                    <a href="delete/{{book.id}}" class="btn btn-danger" id = '{{book.id}}'>Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>

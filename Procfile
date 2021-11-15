@@ -1,0 +1,1 @@
+web gunicorn DjangoLibraryApp.wsgi --log-file -
