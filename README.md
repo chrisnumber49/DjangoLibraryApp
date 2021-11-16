@@ -5,7 +5,6 @@ An library application built with Django, Bootstrap, python, and CSS.
 This application is deployed on: https://djangolibraryappchris49.herokuapp.com/
 
 ## Project Screen Shots
-
 <img src="https://github.com/chrisnumber49/DjangoLibraryApp/blob/master/screen%20shot/demo1.PNG" width="600" > 
 <img src="https://github.com/chrisnumber49/DjangoLibraryApp/blob/master/screen%20shot/demo2.PNG" width="600" > 
 
