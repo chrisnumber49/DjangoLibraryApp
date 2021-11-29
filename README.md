@@ -1,4 +1,4 @@
-# Django Library App
+# Django Library Book Management App
 
 A library application built with Django, Bootstrap, python, and CSS.
 
