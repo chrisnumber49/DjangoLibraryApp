@@ -1,6 +1,6 @@
 # Django Library Book Management App
 
-A library application built with Django, Bootstrap, python, and CSS.
+A library application built with Django, Bootstrap, Python, and CSS.
 
 This application is deployed on: https://djangolibraryappchris49.herokuapp.com/
 
